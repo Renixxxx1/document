@@ -1,0 +1,426 @@
+<div itemscope itemtype="http://schema.org/Product" class="ShopProductView">
+	<div class="Product ProductDetail">
+
+        <h1 itemprop="name"><sj:condition variable="ProductAdditionalName"><span><sj:variable name="ProductAdditionalName" /></span> </sj:condition><sj:variable name="ProductName" /></h1>
+        <sj:condition variable="PathWay"><meta itemprop="category" content="{PathWay}" /></sj:condition>
+        <sj:condition variable="Reviews">
+	        <div class="TopReviews" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+	        	<span><sj:variable name="RatingAveragePercent" />%</span>
+				<meta itemprop="worstRating" content="1" />
+				<meta itemprop="bestRating" content="5" />
+	        	<div itemprop="ratingValue" content="{RatingAverageStars}">
+					<sj:condition variable="RatingAverageStars" is="1">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+					</sj:condition>
+					<sj:condition variable="RatingAverageStars" is="2">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+					</sj:condition>
+					<sj:condition variable="RatingAverageStars" is="3">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+						<i class="fa fa-star-o"></i>
+					</sj:condition>
+					<sj:condition variable="RatingAverageStars" is="4">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star-o"></i>
+					</sj:condition>
+					<sj:condition variable="RatingAverageStars" is="5">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+					</sj:condition>
+				</div>
+				<span><a href="#p-recenzie"><span itemprop="reviewCount"><sj:variable name="ReviewsCount" /></span> <sj:translate name="REVIEWS" /></a></span>
+	  		</div>
+  		</sj:condition>
+
+
+        <div class="ProductWrapper">
+
+            <div class="ProductLeft">
+                <span class="stickers">
+                    <sj:condition variable="Action"><span class="sticker sticker-action"><sj:translate name="Action" /><sj:condition variable="ShowPrices"><sj:condition variable="PriceWithoutVATDifference"> <span class="sticker-percent">-<sj:variable name="PricePercentageDifference" /></span></sj:condition></sj:condition></span></sj:condition>
+                    <sj:condition variable="SellOut"><span class="sticker sticker-sellout"><sj:translate name="SellOut" /><sj:condition variable="ShowPrices"><sj:condition variable="PriceWithoutVATDifference"> <span class="sticker-percent">-<sj:variable name="PricePercentageDifference" /></span></sj:condition></sj:condition></span></sj:condition>
+                    <sj:condition variable="New"><span class="sticker sticker-new"><sj:translate name="New" /></span></sj:condition>
+                    <sj:condition variable="TopOffer"><span class="sticker sticker-topoffer"><sj:translate name="TopOffer" /></span></sj:condition>
+                    <sj:condition variable="Action" is="false"><sj:condition variable="SellOut" is="false"><sj:condition variable="PriceWithoutVATDifference"><sj:condition variable="ShowPrices"><span class="sticker sticker-percent"><sj:translate name="discount"/> -<sj:variable name="PricePercentageDifference" /></span></sj:condition></sj:condition></sj:condition></sj:condition>
+                    <sj:variable name="StatesLabels" />
+                </span>
+                <sj:condition variable="EndOfLife"><div class="EndOfLife"></sj:condition>
+                <ul class="ProductImage" id="MainProductImage">
+                    <li>
+                        <a href="{ProductLargeImage}" title="{ProductName}">
+                            <picture>
+                                <sj:condition variable="ProductLargeImageAltSources"><sj:variable name="ProductLargeImageAltSources" /></sj:condition>
+                                <img src="{ProductLargeImage}" alt="{ProductName}" title="{ProductName}" id="ProductImage{ProductId}" itemprop="image" />
+                            </picture>
+                        </a>
+                    </li>
+                    
+                    <sj:condition variable="HasPhotos">
+                            <sj:condition variable="GroupsPhotos" is="false">
+                                <sj:condition variable="ShopConfig_product_shop_gallery_disable_under_image" is="false">
+                                    <sj:variable name="Photos" />
+                                </sj:condition>
+                            </sj:condition>
+                    </sj:condition>
+                </ul>
+                <sj:condition variable="EndOfLife"></div></sj:condition>
+                <sj:condition variable="HasPhotos">
+                    <div class="mhs">
+                        <sj:condition variable="GroupsPhotos">
+                            <sj:condition variable="ShopConfig_product_shop_gallery_disable_in_tab" is="false">
+                                <a class="photos-slider-link" href="#shop-gallery"><sj:translate name="More photos" /></a>
+                            </sj:condition>
+                        </sj:condition>
+                    </div>
+                </sj:condition>
+            </div>
+
+            <div class="ProductDescription">
+
+            <form action="/mam-zaujem.xhtml" data-mincountval="{MinCount}" data-mincountmultiplyval="{MinCountMultiply}" id="{ProductId}" method="post" onsubmit="{AllowOrderBuy} if(!CheckMinCount(document.getElementById('Quantity'), {MinCount}, {MinCountMultiply}))return false;">
+                <input type="text" value="<sj:variable name="ProductName" />" hidden readonly name="c8d038629ce291232c60021c7bcff5b0">
+                <div class="parametre-top-container">
+                <div class="parametre-top">
+                    <sj:condition variable="ProductAddonProperty100">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty100" /></small>
+                            <span><sj:variable name="ProductAddonValue100" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty101">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty101" /></small>
+                            <span><sj:variable name="ProductAddonValue101" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty102">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty102" /></small>
+                            <span><sj:variable name="ProductAddonValue102" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty103">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty103" /></small>
+                            <span><sj:variable name="ProductAddonValue103" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty104">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty104" /></small>
+                            <span><sj:variable name="ProductAddonValue104" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty105">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty105" /></small>
+                            <span><sj:variable name="ProductAddonValue105" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty106">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty106" /></small>
+                            <span><sj:variable name="ProductAddonValue106" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty107">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty107" /></small>
+                            <span><sj:variable name="ProductAddonValue107" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty108">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty108" /></small>
+                            <span><sj:variable name="ProductAddonValue108" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty109">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty109" /></small>
+                            <span><sj:variable name="ProductAddonValue109" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty110">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty110" /></small>
+                            <span><sj:variable name="ProductAddonValue110" /></span>
+                        </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty111">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty111" /></small>
+                            <span><sj:variable name="ProductAddonValue111" /></span>
+                          </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty112">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty112" /></small>
+                            <span><sj:variable name="ProductAddonValue112" /></span>
+                          </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty113">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty113" /></small>
+                            <span><sj:variable name="ProductAddonValue113" /></span>
+                         </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty114">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty114" /></small>
+                            <span><sj:variable name="ProductAddonValue114" /></span>
+                         </div>
+                    </sj:condition>
+                    <sj:condition variable="ProductAddonProperty115">
+                        <div class="parameter-inside">
+                            <small><sj:variable name="ProductAddonProperty115" /></small>
+                            <span><sj:variable name="ProductAddonValue115" /></span>
+                         </div>
+                <div class="cena-grey">
+                    <div class="cena-wrap">
+                        <sj:condition variable="ShowPrices">
+
+                        <div class="price">
+
+                            <div class="price-row-1">
+                                <sj:condition variable="PriceWithVAT">
+                                    <span class="price-with-vat">
+                                        <sj:condition variable="PathWay"><meta itemprop="category" content="{PathWay}" /></sj:condition>
+                                        <sj:condition variable="OldPriceWithVAT"><del id="OldPriceWithVAT{ProductId}"><sj:variable name="OldPriceWithVAT" /> <sj:variable name="currency" /><sj:condition variable="NotPayingVAT" is="false"> <span><sj:condition variable="UserPricesWithoutVAT" is="false"><sj:translate name="with vat" /></sj:condition><sj:condition variable="UserPricesWithoutVAT"><sj:translate name="without vat" /></sj:condition></span></sj:condition></del></sj:condition>
+
+                                        <strong id="PriceWithVAT{ProductId}" class="main-price"><span itemprop="price" content="{PriceWithVATNoFormat}"><sj:variable name="PriceWithVAT" /></span> <span itemprop="priceCurrency" content="{CurrencyCode}"><sj:variable name="currency" /></span></strong><sj:condition variable="NotPayingVAT" is="false"> <span class="small"><sj:condition variable="UserPricesWithoutVAT" is="false"><sj:translate name="with vat" /></sj:condition><sj:condition variable="UserPricesWithoutVAT"><sj:translate name="without vat" /></sj:condition><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span></sj:condition>
+                                    </span>
+                                </sj:condition>
+                                <sj:condition variable="UserPricesWithoutVAT" is="false">
+                                <sj:condition variable="NotPayingVAT" is="false">
+                                    <sj:condition variable="PriceWithoutVAT">
+                                        <span class="price-without-vat">
+                                            <strong id="PriceWithoutVAT{ProductId}" class="main-price"><sj:variable name="PriceWithoutVAT" /> <sj:variable name="currency" /></strong> <span class="small"><sj:translate name="without vat" /><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span>
+                                        </span>
+                                    </sj:condition>
+                                </sj:condition>
+                                </sj:condition>
+
+                                <sj:condition variable="IsPartner">
+                                    <sj:condition variable="ShopConfig_b2b_show_moc_price">
+                                        <sj:condition variable="NormalPriceWithVAT">
+                                            <div class="normal-price"><sj:translate name="moc" />: <span id="NormalPriceWithVAT{ProductId}"><sj:variable name="NormalPriceWithVAT" /> <sj:variable name="currency" /></span> <span class="small"><sj:translate name="with vat" /></span></div>
+                                        </sj:condition>
+                                        <sj:condition variable="ShopConfig_discount_label_normal_price">
+                                            <sj:condition variable="NormalPricePercentageDifference"><div class="normal-price-discount"><sj:translate name="discount" />: <span id="NormalPricePercentageDifference{ProductId}"><sj:variable name="NormalPricePercentageDifference" /></span></div></sj:condition>
+                                        </sj:condition>
+                                    </sj:condition>
+                                </sj:condition>
+                                <sj:condition variable="RecommendedPriceWithVAT">
+                                    <div class="recommended-price"><sj:translate name="RECOMMENDED PRICE" />: <sj:variable name="RecommendedPriceWithVAT" /> <sj:variable name="currency" /> <sj:condition variable="NotPayingVAT" is="false"> <span class="small"><sj:translate name="with vat" /><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span></sj:condition></div>
+                                </sj:condition>
+                            </div>
+                            <sj:condition variable="currency2">
+                                <div class="price-row-2">
+                                    <sj:condition variable="Price2WithVAT">
+                                        <span class="price-with-vat">
+                                            <sj:condition variable="OldPrice2WithVAT"><del id="OldPrice2WithVAT{ProductId}"><sj:variable name="OldPrice2WithVAT" /> <sj:variable name="currency2" /><sj:condition variable="NotPayingVAT" is="false"> <span><sj:condition variable="UserPricesWithoutVAT" is="false"><sj:translate name="with vat" /></sj:condition><sj:condition variable="UserPricesWithoutVAT"><sj:translate name="without vat" /></sj:condition></span></sj:condition></del></sj:condition>
+                                            <strong id="Price2WithVAT{ProductId}" class="main-price"><sj:variable name="Price2WithVAT" /> <sj:variable name="currency2" /></strong><sj:condition variable="NotPayingVAT" is="false"> <span class="small"><sj:condition variable="UserPricesWithoutVAT" is="false"><sj:translate name="with vat" /></sj:condition><sj:condition variable="UserPricesWithoutVAT"><sj:translate name="without vat" /></sj:condition><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span></sj:condition>
+                                        </span>
+                                    </sj:condition>
+                                    <sj:condition variable="UserPricesWithoutVAT" is="false">
+                                    <sj:condition variable="NotPayingVAT" is="false">
+                                        <sj:condition variable="Price2WithoutVAT">
+                                            <span class="price-without-vat">
+                                                <strong id="Price2WithoutVAT{ProductId}" class="main-price"><sj:variable name="Price2WithoutVAT" /> <sj:variable name="currency2" /></strong> <span class="small"><sj:translate name="without vat" /><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span>
+                                            </span>
+                                        </sj:condition>
+                                    </sj:condition>
+                                    </sj:condition>
+
+                                    <sj:condition variable="IsPartner">
+                                        <sj:condition variable="ShopConfig_b2b_show_moc_price">
+                                            <sj:condition variable="NormalPrice2WithVAT">
+                                                <div class="normal-price"><sj:translate name="moc" />: <span id="NormalPrice2WithVAT{ProductId}"><sj:variable name="NormalPrice2WithVAT" /> <sj:variable name="currency2" /></span> <span class="small"><sj:translate name="with vat" /></span></div>
+                                            </sj:condition>
+                                        </sj:condition>
+                                    </sj:condition>
+                                    <sj:condition variable="RecommendedPrice2WithVAT">
+                                        <div class="recommended-price"><sj:translate name="RECOMMENDED PRICE" />: <sj:variable name="RecommendedPrice2WithVAT" /> <sj:variable name="currency2" /> <sj:condition variable="NotPayingVAT" is="false"> <span class="small"><sj:translate name="with vat" /><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span></sj:condition></div>
+                                    </sj:condition>
+                                </div>
+
+                            </sj:condition>
+                            <sj:condition variable="currency3">
+                                    <div class="price-row-3">
+                                        <sj:condition variable="Price3WithVAT">
+                                            <span class="price-with-vat">
+                                                <sj:condition variable="OldPrice3WithVAT"><del id="OldPrice3WithVAT{ProductId}"><sj:variable name="OldPrice3WithVAT" /> <sj:variable name="currency3" /><sj:condition variable="NotPayingVAT" is="false"> <span><sj:condition variable="UserPricesWithoutVAT" is="false"><sj:translate name="with vat" /></sj:condition><sj:condition variable="UserPricesWithoutVAT"><sj:translate name="without vat" /></sj:condition></span></sj:condition></del></sj:condition>
+                                                <strong id="Price3WithVAT{ProductId}" class="main-price"><sj:variable name="Price3WithVAT" /> <sj:variable name="currency3" /></strong><sj:condition variable="NotPayingVAT" is="false"> <span class="small"><sj:condition variable="UserPricesWithoutVAT" is="false"><sj:translate name="with vat" /></sj:condition><sj:condition variable="UserPricesWithoutVAT"><sj:translate name="without vat" /></sj:condition><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span></sj:condition>
+                                            </span>
+                                        </sj:condition>
+                                        <sj:condition variable="UserPricesWithoutVAT" is="false">
+                                        <sj:condition variable="NotPayingVAT" is="false">
+                                            <sj:condition variable="Price3WithoutVAT">
+                                                <span class="price-without-vat">
+                                                    <strong id="Price3WithoutVAT{ProductId}" class="main-price"><sj:variable name="Price3WithoutVAT" /> <sj:variable name="currency3" /></strong> <span class="small"><sj:translate name="without vat" /><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span>
+                                                </span>
+                                            </sj:condition>
+                                        </sj:condition>
+                                        </sj:condition>
+
+                                        <sj:condition variable="IsPartner">
+                                            <sj:condition variable="ShopConfig_b2b_show_moc_price">
+                                                <sj:condition variable="NormalPrice3WithVAT">
+                                                    <div class="normal-price"><sj:translate name="moc" />: <span id="NormalPrice3WithVAT{ProductId}"><sj:variable name="NormalPrice3WithVAT" /> <sj:variable name="currency3" /></span> <span class="small"><sj:translate name="with vat" /></span></div>
+                                                </sj:condition>
+                                            </sj:condition>
+                                        </sj:condition>
+                                        <sj:condition variable="RecommendedPrice3WithVAT">
+                                            <div class="recommended-price"><sj:translate name="RECOMMENDED PRICE" />: <sj:variable name="RecommendedPrice3WithVAT" /> <sj:variable name="currency3" /> <sj:condition variable="NotPayingVAT" is="false"> <span class="small"><sj:translate name="with vat" /><sj:condition variable="ShopConfig_show_unit_of_measure"><sj:condition variable="UnitOfMeasure"> / <sj:variable name="UnitOfMeasure" /></sj:condition></sj:condition></span></sj:condition></div>
+                                        </sj:condition>
+                                    </div>
+
+                                </sj:condition>
+
+                        </div>
+
+                   </sj:condition>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="like-button"><span class="icon">Mám záujem</span></a>
+                    </div>
+                </div>
+                <div class="parameter-bottom">
+                    <h2>Výbava</h2>
+                    <ul>
+                    <sj:condition variable="ProductAddonProperty112">
+                            <li><sj:variable name="ProductAddonValue112" /></li>
+                    </sj:condition>
+                </ul>
+                </div>
+                <sj:condition variable="LongDescription">
+                <div class="dlhy-bottom">
+                    <sj:variable name="LongDescription" />
+                </div>
+                </sj:condition>
+
+                </form>
+            </div>
+            <div class="clear"></div>
+        </div>
+	</div>
+</div>
+
+
+<sj:condition variable="WatchDogDisplay">
+<div class="skry">
+	<div class="SetWatchDog" id="SetWatchDogBox">
+		<form action="{ProductOrderFormAction}" method="post">
+			<h3><sj:translate name="GUARD_PRICE_AVAILABILITY" /></h3>
+
+	                            <sj:condition variable="WatchDogAlreadySet" is="false">
+                                                    <div class="watch-doge-inside WatchDogEmail">
+                                                        <sj:condition variable="AnonymWatchDog" is="true">
+                                                            <div class="doge-full"><p style="text-align:center;"><sj:translate name="SEND_INFORMATION_ITEM" />. </p></div>
+                                                            <div><p><sj:translate name="Your email address" />:</p></div>
+                                                            <div><input type="text" name="watchDogEmail" class="noEnterSubmit" required /></div>
+                                                        </sj:condition>
+                                                        <sj:condition variable="AnonymWatchDog" is="false">
+                                                            <div class="doge-full"><p><sj:translate name="TAKE_WATCHDOG" />. </p></div>
+                                                        </sj:condition>
+                                                    </div>
+                                                    <sj:condition variable="ProductVariants"><dl class="variants-watch-dog"><sj:variable name="ProductVariants" /></dl></sj:condition>
+                                                        
+                                                    <sj:condition variable="StockCountName" is="true">
+                                                        <sj:condition variable="StockCount" is="0">
+                                                            <div class="watch-doge-inside watch-doge-choose">
+                                                                <div><p><sj:translate name="type of alert" />:</p></div>
+                                                                <div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="option" id="option1" value="1" checked>
+                                                                        <label class="form-check-label" for="option1"><sj:translate name="product stock in" /></label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" name="option" value="2" id="option2">
+                                                                        <label class="form-check-label" for="option2"><sj:translate name="price level" /></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="watch-doge-inside watch-doge-grow WatchDogStock">
+                                                                <div><p><sj:translate name="Warn me when product is in stock." /></p></div>
+                                                                <div><button type="submit" name="SetWatchDogStock"><sj:translate name="set" /></button></div>
+                                                            </div>
+                                                        </sj:condition>
+                                                    </sj:condition>
+
+                                                    <div class="watch-doge-inside watch-doge-grow WatchDogPrice">
+                                                        <div><p><sj:translate name="Warn me when price is bellow" /> <input type="text" value="{PriceWithVAT}" name="WatchDogPriceLimit" class="noEnterSubmit" /><sj:variable name="currency" /></p></div>
+                                                        <div><button type="submit" name="SetWatchDogPrice"><sj:translate name="set" /></button></div>
+                                                    </div>
+	                            </sj:condition>
+	                            <sj:condition variable="WatchDogAlreadySet" is="true">
+	                                            <div class="wdis">
+                                                    <p>
+	                                                <sj:translate name="Your watch dog is set" />
+	                                                <sj:condition variable="WatchDogType" is="price">
+	                                                    <sj:translate name="price limit under" /> <sj:variable name="WatchDogPriceLimit" /><sj:variable name="currency" />
+	                                                </sj:condition>
+	                                                <sj:condition variable="WatchDogType" is="stock">
+	                                                    <sj:translate name="is in stock" />
+	                                                </sj:condition>
+	                                                </p> 
+	                                                <a href="{WatchDogDeleteLink}"><sj:translate name="reset" /></a>
+                                                </div>
+	                                </sj:condition>
+		</form>
+	</div>
+</div>
+</sj:condition>
+
+<sj:condition variable="BuyingListsEnable">
+    <sj:condition variable="ProductOrderFormAction">
+    <div class="skry">
+        <div id="wishlist">
+                <form action="{ProductOrderFormAction}" method="post">
+                    <h3><sj:translate name="WISHLIST_ADD" /></h3>
+                    <div class="SetBuyingLists">
+                        <sj:condition variable="Logged" is="false">
+                            <sj:condition variable="BuyingLists" is="false"><p><sj:translate name="WISHLIST_ADD_IF_1" /> <a href="/eshop/action/enterlogin.xhtml"><sj:translate name="LOGIN" /></a>.</p></sj:condition>
+                        </sj:condition>
+                        <sj:condition variable="Logged">
+                            <sj:condition variable="BuyingLists" is="false"><p><sj:translate name="WISHLIST_ADD_IF_2" /> <a href="/eshop/action/buyinglists.xhtml"><sj:translate name="CREATE" /></a>.</p></sj:condition>
+                        </sj:condition>
+                        <sj:condition variable="BuyingLists">
+                            <div class="buying_list">
+                                <sj:condition variable="ProductVariants"><dl class="variants-wish-list"><sj:variable name="ProductVariants" /></dl><br></sj:condition>
+                                <span><sj:translate name="INSERT_PRODUCT_TO_BUYING_LIST" /></span><br />
+                                <sj:variable name="BuyingLists" />
+                                <div class="blqt">
+                                    <sj:translate name="quantity" /> <input type="text" size="5" value="{DefaultQuantity}" name="quantity" />
+                                    <span><button type="submit" class="BuyingListSubmit" name="ProductBuyingListSubmit"><sj:translate name="ADD" /></button></span>
+                                </div>
+                            </div>
+                        </sj:condition>
+                    </div>
+                </form>
+        </div>
+    </div>
+    </sj:condition>
+</sj:condition>
+
+<sj:variable name="VariantsScript" />
